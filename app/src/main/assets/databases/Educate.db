@@ -1,0 +1,94 @@
+BEGIN TRANSACTION;
+CREATE TABLE IF NOT EXISTS `Subject` (
+	`Id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+	`Name`	TEXT NOT NULL,
+	`Standard`	INTEGER NOT NULL,
+	`Review`	INTEGER NOT NULL
+);
+INSERT INTO `Subject` VALUES (1,'English',1,0);
+INSERT INTO `Subject` VALUES (2,'English',2,0);
+INSERT INTO `Subject` VALUES (3,'English',3,0);
+INSERT INTO `Subject` VALUES (4,'English',4,0);
+INSERT INTO `Subject` VALUES (5,'English',5,0);
+INSERT INTO `Subject` VALUES (6,'English',6,0);
+INSERT INTO `Subject` VALUES (7,'Mathematic',1,0);
+INSERT INTO `Subject` VALUES (8,'Mathematic',2,0);
+INSERT INTO `Subject` VALUES (9,'Mathematic',3,0);
+INSERT INTO `Subject` VALUES (10,'Mathematic',4,0);
+INSERT INTO `Subject` VALUES (11,'Mathematic',5,0);
+INSERT INTO `Subject` VALUES (12,'Mathematic',6,0);
+INSERT INTO `Subject` VALUES (13,'Science',1,0);
+INSERT INTO `Subject` VALUES (14,'Science',2,0);
+INSERT INTO `Subject` VALUES (15,'Science',3,0);
+INSERT INTO `Subject` VALUES (16,'Science',4,0);
+INSERT INTO `Subject` VALUES (17,'Science',5,0);
+INSERT INTO `Subject` VALUES (18,'Science',6,0);
+INSERT INTO `Subject` VALUES (19,'Bahasa Malaysia',1,0);
+INSERT INTO `Subject` VALUES (20,'Bahasa Malaysia',2,0);
+INSERT INTO `Subject` VALUES (21,'Bahasa Malaysia',3,0);
+INSERT INTO `Subject` VALUES (22,'Bahasa Malaysia',4,0);
+INSERT INTO `Subject` VALUES (23,'Bahasa Malaysia',5,0);
+INSERT INTO `Subject` VALUES (24,'Bahasa Malaysia',6,0);
+CREATE TABLE IF NOT EXISTS `Score` (
+	`Id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	`Score`	INTEGER NOT NULL,
+	`StartYear`	INTEGER NOT NULL,
+	`StartMonth`	INTEGER NOT NULL,
+	`StartDay`	INTEGER NOT NULL,
+	`EndYear`	INTEGER NOT NULL,
+	`EndMonth`	INTEGER NOT NULL,
+	`EndDay`	INTEGER NOT NULL,
+	`Duration`	INTEGER NOT NULL,
+	`feedback`	TEXT NOT NULL
+);
+CREATE TABLE IF NOT EXISTS `Question` (
+	`Id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	`Description`	TEXT NOT NULL,
+	`Option1`	TEXT NOT NULL,
+	`Option2`	TEXT NOT NULL,
+	`Option3`	TEXT NOT NULL,
+	`Answer`	TEXT NOT NULL,
+	`SubjectId`	INTEGER NOT NULL,
+	FOREIGN KEY(`SubjectId`) REFERENCES `Subject`(`Id`)
+);
+INSERT INTO `Question` VALUES (1,'Tempoyak ialah sejenis makanan yang dibuat daripada buah________________. ','nangka','betik','rambutan','durian',19);
+INSERT INTO `Question` VALUES (2,'Kebanyakan pendatang dari Indonesia dari Bangladesh dating ke negara ________________ kerana banyak terdapat peluang pekerjaan. ','kami','saya','dia','kita',19);
+INSERT INTO `Question` VALUES (3,'Istana Syarqiyyah ialah tempat bersemayam                         Sultan Terengganu. ','tuanku','patik','raja','baginda',19);
+INSERT INTO `Question` VALUES (4,'Piala lama kepunyaan ayah yang tersimpan di dalam almari itu kelihatan___________kerana sudah lama tidak digilap. ','pudar','buruk','kabur','kusam',19);
+INSERT INTO `Question` VALUES (5,'Kedengaran bunyi beruang_______________ di dalam hutan menyebabkan binatang lain lari bertempiaran untuk menyelamatkan diri. ','menyalak','meringkik','melenguh','menderam',19);
+INSERT INTO `Question` VALUES (6,'Ahmad found that all the paddy plants in his paddy field were destroyed by the rats. Which of the following animals can help to solve Ahmad’s problem? ','Sparrow','Eagle ','Buffalo ','Cat ',13);
+INSERT INTO `Question` VALUES (7,'Which of the following methods is used to measure the volume of uneven object? ','Using the formula ','Using graph paper ','Using the triple beam balance ','Using water displacement method ',13);
+INSERT INTO `Question` VALUES (8,'Which of these answer is the standard unit to measure area ','Centimetre ','Kilometre ','Milimetre cubic ','Metre square ',13);
+INSERT INTO `Question` VALUES (9,'What is the process involved in the change of a liquid to gas? ','Condensation ','Freezing ','Melting ','Evaporation ',13);
+INSERT INTO `Question` VALUES (10,'Which of the following is suitable to build a strong building? ','Bamboo ','Clay ','Wood ','Concrete ',13);
+INSERT INTO `Question` VALUES (11,'1 km 725m + 2km 50m =  ','3km 225m ','4km 225m ','4km 775m ','3km 775m ',7);
+INSERT INTO `Question` VALUES (12,'39894 – 7 x 5692 ','55','60','65','50',7);
+INSERT INTO `Question` VALUES (13,'Give the result of 13.5 divided by 6 ','2.02','2.20','2.52','2.25',7);
+INSERT INTO `Question` VALUES (14,'88 days =  ','11 weeks 3 days','11 weeks 4 days','12 weeks 3 days','12 weeks 4 days',7);
+INSERT INTO `Question` VALUES (15,'7 days =  ','2 weeks','no days',' 6000 days','1 week',7);
+INSERT INTO `Question` VALUES (16,'Laila uses a ____________ of soap to bathe ','cup','loaf','tube','bar',1);
+INSERT INTO `Question` VALUES (17,'Zaki got the __________marks for English in classroom’s history of 6 Newton. ','less','lowest','lingilo','least',1);
+INSERT INTO `Question` VALUES (18,'Joyce _______ programming. ','Liki ','Liking ','Lingolilo ','Likes ',1);
+INSERT INTO `Question` VALUES (19,'Soyabean is __________drink. ','Them','Long','Have','A',1);
+INSERT INTO `Question` VALUES (20,'My mother is __________ woman in the universe. ','prettiest','ugly','handome','the prettiest',1);
+CREATE TABLE IF NOT EXISTS `MemberSubject` (
+	`MemberUsername`	TEXT NOT NULL,
+	`SubjectId`	INTEGER NOT NULL,
+	`Status`	TEXT NOT NULL,
+	`Attempt`	INTEGER NOT NULL,
+	`Id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	FOREIGN KEY(`SubjectId`) REFERENCES `Subject`(`Id`),
+	FOREIGN KEY(`MemberUsername`) REFERENCES `Member`(`Username`)
+);
+CREATE TABLE IF NOT EXISTS `Member` (
+	`Username`	TEXT NOT NULL UNIQUE,
+	`Password`	TEXT NOT NULL,
+	`Name`	TEXT NOT NULL,
+	`Grade`	INTEGER NOT NULL,
+	`Status`	INTEGER NOT NULL,
+	`Email`	TEXT NOT NULL,
+	`Star`	INTEGER NOT NULL,
+	PRIMARY KEY(`Username`)
+);
+INSERT INTO `Member` VALUES ('huisheng','huisheng','lauhuisheng',1,'Active','huisheng97.lhs@gmail.com',0);
+COMMIT;

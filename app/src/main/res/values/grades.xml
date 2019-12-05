@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <string-array name="grades_array">
+        <item>Standard 1</item>
+        <item>Standard 2</item>
+        <item>Standard 3</item>
+        <item>Standard 4</item>
+        <item>Standard 5</item>
+        <item>Standard 6</item>
+    </string-array>
+</resources>

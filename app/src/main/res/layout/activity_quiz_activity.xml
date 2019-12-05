@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg6"
+    tools:context=".quiz_activity">
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/airbnb_cereal_bold"
+        android:text="Quiz"
+        android:textAlignment="center"
+        android:textColor="#7B4C02"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="320dp"
+        android:layout_height="500dp"
+        android:layout_marginTop="30dp"
+        app:cardCornerRadius="25dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView13">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            >
+
+            <Button
+                android:id="@+id/quizChoiceD"
+                android:layout_width="200dp"
+                android:layout_height="42dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/white_yellowborder_button"
+                android:letterSpacing=".1"
+                android:text="Choice D"
+                android:textAllCaps="false"
+                android:textColor="#7B4C02"
+                android:textSize="18sp"
+                app:fontFamily="@font/fredoka_one_regular"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/quizChoiceC" />
+
+            <Button
+                android:id="@+id/quizChoiceA"
+                android:layout_width="200dp"
+                android:layout_height="42dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginBottom="268dp"
+                android:background="@drawable/white_yellowborder_button"
+                android:letterSpacing=".1"
+                android:text="Choice A"
+                android:textAllCaps="false"
+                android:textColor="#7B4C02"
+                android:textSize="18sp"
+                app:fontFamily="@font/fredoka_one_regular"
+                app:layout_constraintBottom_toBottomOf="parent"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/quizQuestion" />
+
+            <Button
+                android:id="@+id/quizChoiceB"
+                android:layout_width="200dp"
+                android:layout_height="42dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/white_yellowborder_button"
+                android:letterSpacing=".1"
+                android:text="Choice B"
+                android:textAllCaps="false"
+                android:textColor="#7B4C02"
+                android:textSize="18sp"
+                app:fontFamily="@font/fredoka_one_regular"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/quizChoiceA" />
+
+            <Button
+                android:id="@+id/quizChoiceC"
+                android:layout_width="200dp"
+                android:layout_height="42dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/white_yellowborder_button"
+                android:letterSpacing=".1"
+                android:text="Choice C"
+                android:textAllCaps="false"
+                android:textColor="#7B4C02"
+                android:textSize="18sp"
+                app:fontFamily="@font/fredoka_one_regular"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/quizChoiceB" />
+
+            <TextView
+                android:id="@+id/quizQuestionId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/airbnb_cereal_extra_bold"
+                android:text="Question 1 of 25"
+                android:textColor="#7B4C02"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/quizQuestion"
+                android:layout_width="279dp"
+                android:layout_height="162dp"
+                android:layout_marginTop="45dp"
+                android:fontFamily="@font/airbnb_cereal_extra_bold"
+                android:text="Question. Question. Question. Question. Question. Question. Question. Question. Question. Question. Question. Question. Question. Question. Question. Question. Question. Question."
+                android:textAlignment="center"
+                android:textColor="#7B4C02"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
